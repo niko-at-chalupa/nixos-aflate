@@ -33,5 +33,6 @@
     protontricks
     hyprpicker
     openutau
+    inputs.helium-browser.packages.${pkgs.stdenv.hostPlatform.system}.helium
   ];
 }
