@@ -230,6 +230,9 @@
 
   fonts.packages = [
     pkgs.meslo-lgs-nf
+    (pkgs.google-fonts.override {
+      fonts = [ "XanhMono" "RobotoMono" ];
+    })
   ];
   fonts.fontDir.enable = true;
 
