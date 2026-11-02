@@ -18,4 +18,5 @@
   home.homeDirectory = "/home/niko";
   home.stateVersion = "26.05";
   home.enableNixpkgsReleaseCheck = false;
+  home.sessionVariables.GH_CONFIG_DIR = "%{config.home.homeDirectory}/.local/share/gh";
 }
