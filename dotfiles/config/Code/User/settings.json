@@ -44,7 +44,7 @@
             // "myconfig.json": "jsonc"
     },
     "security.workspace.trust.untrustedFiles": "open",
-    "workbench.colorTheme": "Rosé Pine",
+    "workbench.colorTheme": "Niko's VSCode Theme",
     "python.analysis.typeCheckingMode": "strict",
     "window.menuBarVisibility": "classic",
     "git.autofetch": true,

@@ -13,7 +13,6 @@
     fuzzel
     inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     hyprshot
-    vscode
     nodejs
     pnpm
     yarn

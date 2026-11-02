@@ -9,6 +9,7 @@
     ./home/dotfiles.nix
     ./home/hyprland.nix
     ./home/packages.nix
+    ./home/vscode.nix
     ./home/zsh.nix
   ];
   home.username = "niko";
@@ -16,4 +17,3 @@
   home.stateVersion = "26.05";
   home.enableNixpkgsReleaseCheck = false;
 }
-
