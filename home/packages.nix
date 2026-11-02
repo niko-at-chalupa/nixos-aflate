@@ -10,7 +10,6 @@
     copyq
     arrpc
     brightnessctl
-    fuzzel
     inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     hyprshot
     nodejs

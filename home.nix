@@ -7,7 +7,9 @@
 {
   imports = [
     ./home/dotfiles.nix
+    ./home/fuzzel.nix
     ./home/hyprland.nix
+    ./home/notifications.nix
     ./home/packages.nix
     ./home/vscode.nix
     ./home/zsh.nix
