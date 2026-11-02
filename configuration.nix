@@ -193,7 +193,17 @@
     package = pkgs.kdePackages.kwallet-pam;
   };
 
-  services.input-remapper.enable = true;
+  services.keyd = {
+    enable = true;
+    keyboards.macbook = {
+      ids = [ "05ac:0290:f2d1f5c2" ];
+      settings.main = {
+        fn = "leftcontrol";
+        leftcontrol = "fn";
+        capslock = "esc";
+      };
+    };
+  };
 
   nixpkgs.config.allowUnfree = true;
 
@@ -237,4 +247,3 @@
     { from = 1714; to = 1764; }
   ];
 }
-
