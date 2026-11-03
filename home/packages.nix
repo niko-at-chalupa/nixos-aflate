@@ -4,6 +4,7 @@
   home.packages = with pkgs; [
     kdePackages.dolphin
     kdePackages.kdeconnect-kde
+    bluetui
     # yaak is not prebuilt in nixpkgs; compiling this Tauri/Rust app needs far
     # more than 4 GiB. Use the upstream release/Flatpak instead.
     # yaak
