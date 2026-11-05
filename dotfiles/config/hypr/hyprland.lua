@@ -30,7 +30,9 @@ hl.monitor({
 })
 
 local terminal    = "ghostty"
-local fileManager = "dolphin"
+-- Ask the resident dolphin-daemon (home/dolphin.nix) to open a window; fall back
+-- to starting Dolphin normally if the daemon isn't up.
+local fileManager = [[busctl --user --timeout=2 call org.freedesktop.FileManager1 /org/freedesktop/FileManager1 org.freedesktop.FileManager1 ShowFolders ass 1 "file://$HOME" "" || dolphin]]
 local menu = "fuzzel"
 
 hl.config({
