@@ -17,8 +17,13 @@
   services.hyprpaper = {
     enable = true;
     settings = {
-      preload = [ "${config.home.homeDirectory}/Pictures/Wallpapers/default.png" ];
-      wallpaper = [ ",${config.home.homeDirectory}/Pictures/Wallpapers/default.png" ];
+      preload = [ "${config.home.homeDirectory}/Pictures/Wallpapers/combined.png" ];
+      wallpaper = [
+        {
+          monitor = "eDP-1";
+          path = "${config.home.homeDirectory}/Pictures/Wallpapers/combined.png";
+        }
+      ];
       splash = false;
     };
   };
