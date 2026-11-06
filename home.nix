@@ -6,7 +6,6 @@
 
 {
   imports = [
-    ./home/dolphin.nix
     ./home/dotfiles.nix
     ./home/fuzzel.nix
     ./home/hyprland.nix
