@@ -253,8 +253,6 @@
     { from = 1714; to = 1764; }
   ];
 
-  programs.nix-ld.enable = true;
-
   programs.nix-ld.libraries = with pkgs; [
     stdenv.cc.cc.lib   # libstdc++.so.6
     llvmPackages_21.libcxx # libc++.so.1
