@@ -19,7 +19,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("copyq --start-server")
     hl.exec_cmd("kded5")
     hl.exec_cmd("kbuildsycoca5")
-    hl.exec_cmd("input-remapper-control --command autoload")
+    hl.exec_cmd("inpuamount of wobble mesh vertices per edget-remapper-control --command autoload")
 end)
 
 hl.monitor({
@@ -134,6 +134,13 @@ hl.config({
         },
         glow = {
             enabled = false,
+        },
+        wobble = {
+            enabled = true,
+            intensity = 0.2,
+            stiffness = 350,
+            mass = 1.1,
+            velocity_epsilon = 1,
         },
     },
     dwindle = {

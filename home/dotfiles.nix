@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ config, lib, ... }:
 
 let
   collectFiles = sourceRoot: targetRoot:
@@ -35,5 +35,11 @@ in
         force = true;
       };
     }
-    // collectFiles ../dotfiles/config ".config";
+    // collectFiles ../dotfiles/config ".config"
+    // {
+      ".config/hypr/hyprland.lua" = {
+        source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-aflate/dotfiles/config/hypr/hyprland.lua";
+        force = true;
+      };
+    };
 }
