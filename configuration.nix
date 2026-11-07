@@ -22,6 +22,10 @@
   # Configure network connections interactively with nmcli or nmtui.
   networking.networkmanager.enable = true;
 
+  # Wi-Fi power saving causes dropped frames and DHCP timeouts on the USB
+  # adapter, so turn it off entirely.
+  networking.networkmanager.wifi.powersave = false;
+
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
 
