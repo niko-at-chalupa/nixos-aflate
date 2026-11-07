@@ -17,10 +17,48 @@
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  # Never autosuspend USB devices; the Wi-Fi dongle goes flaky when it sleeps.
+  boot.kernelParams = [ "usbcore.autosuspend=-1" ];
+
   networking.hostName = "aflate"; # Define your hostname.
 
   # Configure network connections interactively with nmcli or nmtui.
   networking.networkmanager.enable = true;
+
+  # Wi-Fi power saving causes dropped frames and DHCP timeouts on the USB
+  # adapter, so turn it off entirely.
+  networking.networkmanager.wifi.powersave = false;
+
+  # Declare the home Wi-Fi profile instead of creating it by hand in nmtui.
+  # It is deliberately not pinned to an interface name: the USB dongle's name
+  # changes with the port it is plugged into, and a pinned profile stops
+  # matching, so nmtui creates a duplicate ("11:11 1", "11:11 2", ...).
+  #
+  # The password lives outside the repo. Create it once with:
+  #   sudo install -d -m 700 /var/lib/secrets
+  #   echo 'WIFI_PSK=yourpassword' | sudo tee /var/lib/secrets/wifi.env
+  #   sudo chmod 600 /var/lib/secrets/wifi.env
+  networking.networkmanager.ensureProfiles = {
+    environmentFiles = [ "/var/lib/secrets/wifi.env" ];
+    profiles.home-wifi = {
+      connection = {
+        id = "11:11";
+        uuid = "9e9b0e0c-5a98-4048-afee-c5e875cb49ab";
+        type = "wifi";
+        autoconnect = "true";
+      };
+      wifi = {
+        ssid = "11:11";
+        mode = "infrastructure";
+      };
+      wifi-security = {
+        key-mgmt = "wpa-psk";
+        psk = "$WIFI_PSK";
+      };
+      ipv4.method = "auto";
+      ipv6.method = "auto";
+    };
+  };
 
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
