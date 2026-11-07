@@ -17,6 +17,9 @@
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  # Never autosuspend USB devices; the Wi-Fi dongle goes flaky when it sleeps.
+  boot.kernelParams = [ "usbcore.autosuspend=-1" ];
+
   networking.hostName = "aflate"; # Define your hostname.
 
   # Configure network connections interactively with nmcli or nmtui.
