@@ -141,6 +141,7 @@ hl.config({
             stiffness = 350,
             mass = 1.1,
             velocity_epsilon = 1,
+            mesh = 2,
         },
     },
     dwindle = {
