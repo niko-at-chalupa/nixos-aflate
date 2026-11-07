@@ -17,8 +17,17 @@
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  # Never autosuspend USB devices; the Wi-Fi dongle goes flaky when it sleeps.
-  boot.kernelParams = [ "usbcore.autosuspend=-1" ];
+  boot.kernelParams = [
+    # Never autosuspend USB devices; the Wi-Fi dongle goes flaky when it sleeps.
+    "usbcore.autosuspend=-1"
+    # Without a country code the kernel uses the restrictive world regulatory
+    # domain, where many channels are passive-scan only. The home AP then
+    # "disappears" from scan results until a beacon happens to be heard.
+    "cfg80211.ieee80211_regdom=PH"
+  ];
+
+  # Regulatory database so the kernel can actually apply the PH rules.
+  hardware.wirelessRegulatoryDatabase = true;
 
   networking.hostName = "aflate"; # Define your hostname.
 
