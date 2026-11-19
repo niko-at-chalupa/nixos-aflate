@@ -12,6 +12,7 @@
     ./home/notifications.nix
     ./home/packages.nix
     ./home/vscode.nix
+    ./home/ytermusic.nix
     ./home/zsh.nix
   ];
   home.username = "niko";
